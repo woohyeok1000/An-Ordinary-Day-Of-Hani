@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-public class HaniAimRotation : MonoBehaviour
+public class AimRotation : MonoBehaviour
 {    
     [SerializeField] private Transform bodyPivot;
 
-    [SerializeField] private SpriteRenderer HaniRenderer;
+    [SerializeField] private SpriteRenderer characterRenderer;
 
     private MainController controller;
 
@@ -28,7 +28,7 @@ public class HaniAimRotation : MonoBehaviour
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        HaniRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+        characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
 
         bodyPivot.rotation = Quaternion.Euler(0, 0, rotZ);
     }

@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float cameraSpeed = 5.0f;
+    public Transform player;
+    [SerializeField] float smooth = 0.2f;
 
-    public GameObject player;
-
-    private void Update()
+    private void FixedUpdate()
     {
-        Vector3 dir = player.transform.position - this.transform.position;
-        Vector3 moveVector = new Vector3(dir.x * cameraSpeed * Time.deltaTime, dir.y * cameraSpeed * Time.deltaTime, 0.0f);
-        this.transform.Translate(moveVector);
+        Vector3 targetPos = new Vector3(player.position.x, player.position.y, this.transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, targetPos, smooth);
     }
 }

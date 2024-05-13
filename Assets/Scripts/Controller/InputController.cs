@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HaniInputController : MainController
+public class InputController : MainController
 {
-    private Camera camera;
+    private new Camera camera;
     protected void Awake()
     {
         camera = Camera.main; // mainCamera 태그가 붙어있는 카메라를 가져온다

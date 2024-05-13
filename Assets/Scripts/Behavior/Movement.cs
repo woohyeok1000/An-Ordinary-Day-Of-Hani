@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HaniMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {    
     private MainController controller;
     private Rigidbody2D movementRigidbody;    
