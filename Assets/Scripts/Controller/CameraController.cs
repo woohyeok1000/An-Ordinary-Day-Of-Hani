@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    // 캐릭터 따라가는 카메라
+
     public Transform player;
     [SerializeField] float smooth = 0.2f;
 

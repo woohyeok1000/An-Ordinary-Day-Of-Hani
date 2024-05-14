@@ -17,16 +17,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject HaniButton;
     public GameObject ChickenButton;
-
-    public enum Character
-    {
-        Player,
-        Player_2
-    }
+    public GameObject Player;
+    public GameObject Player_2;
+    
 
     public void Awake()
     {
-        //if(HaniButton.gameObject.) Player.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -36,6 +33,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        // 어떤 캐릭터를 선택했는지 확인 후 해당되지 않은 캐릭터 비활성화
+        //if(HaniButton.GetComponent<HaniButton>().isHani == true) // 오류로 인해 주석처리..
+        //{
+        //    Player_2.SetActive(false);
+        //}
     }
 }

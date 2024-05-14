@@ -7,9 +7,8 @@ public class Movement : MonoBehaviour
 
     private Vector2 movementDirection = Vector2.zero;
 
-    private void Awake() // Awake 에서는 주로 내 컴포넌트 안에서 끝나는 것
+    private void Awake()
     {
-        // controller 랑 TopDownMovement 랑 같은 게임 오브젝트 안에 있다라는 가정
         controller = GetComponent<MainController>();
         movementRigidbody = GetComponent<Rigidbody2D>();
     }
@@ -24,9 +23,8 @@ public class Movement : MonoBehaviour
         movementDirection = direction;
     }
 
-    private void FixedUpdate() // FixedUpdate 는 물리업데이트와 관련이 있다
+    private void FixedUpdate()
     {
-        // rigidbody 의 값을 바꾸니까 물리 업데이트 발생
         ApplyMovement(movementDirection);
     }
 
